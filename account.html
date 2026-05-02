@@ -1,0 +1,44 @@
+<html>
+ <head>
+    <title>
+        LOGIN
+    </title>
+     <link rel="stylesheet" type="text/css" href="astyle.css">
+ </head>
+ <body>
+  <div class="loginbox">
+    <img src="login.jfif" class="avatar">
+    <h2>LOGIN HERE</h2>
+    <form onsubmit="return verifypassword()">
+        <p>Username</p>
+        <input type="text" name="" placeholder="Enter Username">
+        <p>Password</p>
+        <input type="password" name=""  id="pswd" placeholder="Enter Password">
+        <input type="submit" name="" value="login">
+        <a href="#">lost your password?</a><br>
+        <a href="#">Don't have an account?</a>
+    </form>
+  </div>
+  <script>
+    function verifypassword(){
+        var pw = document.getElementById("pswd").value;
+        if(pw=="")
+        {
+            alert("*Fill the password please!*");
+            return false;
+        }
+        if(pw.length<8){
+            alert("*Password length must be atleast 8 characters*");
+            return false;
+        }
+        if(pw.length>15){
+            alert("*Password length must not exceed 15 characters*");
+            return false;
+        }
+        else{
+            alert("Password is correct")
+        }
+    }
+  </script>
+ </body>    
+</html>
