@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="cstyle.css">
+    </head>
+    <body>
+        
+       <div class="wrapper">
+        <form>
+            <h1>CONTACT US</h1>
+            <div class="input-field">
+                <leble for="name">Name</leble>
+                <input type="text" name="Name" id="name" placeholder="Your name">
+            </div>
+            <div class="input-field">
+                <leble for="name">Email</leble>
+                <input type="email" name="email" id="email" placeholder="Your email"required>
+            </div>
+                <div class="input-field">
+                    <leble for="massage">Massage</leble>
+                    <textarea name="massage" id="massage" placeholder="Your problem"></textarea>
+                </div>
+                <button type="submit">send</button>
+        </form>
+       </div>
+       <?php
+        $email = test_input($_POST["email"]);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+        {
+           $emailErr = "Invalid email format";
+           document.form1.text1.focus();
+           return false;
+        }
+        else
+        {
+          document.form.text1.focus();
+          return true;
+        }
+       ?>
+    </body>
+</html>
